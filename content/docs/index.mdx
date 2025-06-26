@@ -1,13 +1,50 @@
 ---
-title: Hello World
-description: Your first document
+title: Hello iBL
+description: This is an example of hosted documentation using fumadocs
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Banner } from 'fumadocs-ui/components/banner';
 
-## What is Next?
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+
+
+## all the components we could use::
 
 <Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
+  <Card title="Learn more about api 1" href="https://nextjs.org/docs" />
+  <Card title="Learn more about api 2" href="https://fumadocs.vercel.app" />
 </Cards>
+
+
+
+
+accordions:
+
+<Accordions>
+  <Accordion title="Frequently Asked Questions">
+    Here are some common questions...
+  </Accordion>
+  <Accordion title="Installation Steps">
+    Follow these steps to install...
+  </Accordion>
+</Accordions>
+
+
+banner:
+<Banner variant="rainbow">I'm a banner</Banner>
+
+code block:
+<DynamicCodeBlock lang="ts" code=' export type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]>}' />
+
+folder strucutre:
+<Files>
+  <Folder name="src" defaultOpen>
+    <Folder name="clients" />
+    <Folder name="utils" />
+    <File name="index.ts" />
+  </Folder>
+</Files>
